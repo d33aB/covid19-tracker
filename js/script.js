@@ -33,7 +33,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: mapCenter,
     zoom: 2,
-    // Disable the zoom etc from map
+    // Disable zoom etc from map
     disableDefaultUI: true,
     styles: mapStyle,
   });
@@ -125,17 +125,14 @@ const getCountryData = countryIso => {
       return response.json();
     })
     .then(data => {
-      console.log(data.countryInfo.lat);
       setMapCenter(data.countryInfo.lat, data.countryInfo.long, 5);
       setStatsData(data);
       var test = new google.maps.Marker({
         position: { lat: -25.363, lng: 131.044 },
         map: map,
       });
-      console.log(test);
       test.addListener('click', function () {
         infoWindow.open(map, test);
-        console.log(test);
       });
     });
 };
@@ -229,7 +226,6 @@ const showDataOnMap = (data, casesType = 'cases') => {
     // Create info window on hover
     google.maps.event.addListener(countryCircle, 'mouseover', function () {
       infoWindow.open(map);
-      console.log(countryCircle.center, 'mouseover');
     });
 
     // Close info window when mouse not in the circle

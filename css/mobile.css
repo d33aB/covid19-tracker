@@ -1,0 +1,31 @@
+.left {
+    position: relative;
+}
+
+.right {
+    position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    .container-fluid {
+        justify-content: space-around;
+    }
+
+    .left {
+        order: 2;
+    }
+
+    .right {
+        order: 1;
+    }
+}
+
+.mobileHide {
+    display: inline;
+}
+
+@media screen and (max-device-width: 557px) {
+    .mobileHide {
+        display: none;
+    }
+}
